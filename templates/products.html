@@ -1,0 +1,18 @@
+<h2>Erin's Store</h2>
+{% set products = body['products'] -%}
+{% for product in products -%}
+    <li class="divider"></li>
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="fancybox" rel="{{ product['title'] }}" href="img/{{ product['big_image'] }}" title="{{ product['title'] }}">
+                <img src="img/{{ product['thumb'] }}"></img>
+            </a>
+        </div>
+        <div class="col-xs-6">
+            <a target="_target" href="{{ product['link'] }}">{{ product['link'] }}</a>
+            <p>by Erin Cosgrove</p>
+            <p>List Price: ${{ product['price'] }}</p>
+        </div>
+    </div>
+    <br>
+{%- endfor %}

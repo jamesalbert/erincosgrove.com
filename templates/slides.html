@@ -1,0 +1,4 @@
+{% set slides = body['slides'] -%}
+{% for slide in slides -%}
+<div><img u='image' src='img/{{ slide["title"] }}' /></div></div>
+{%- endfor %}

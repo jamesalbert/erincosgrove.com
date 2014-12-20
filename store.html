@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#submit').click(function() {
+                var payload = {
+                    title: $('#title').val(),
+                    price: $('#price').val(),
+                    description: $('#description').val(),
+                    thumb: $('#thumb').val(),
+                    link: $('#link').val(),
+                    screenshots: $('#screenshots').val(),
+                    big_image: $('#big_image').val()
+                }
+                $.post('http://jamesalbert.com/product', data=payload, function(res) {
+                    alert('Product Posted');
+                    window.location.reload();
+                });
+            })
+        })
+        </script>
+    </head>
+    <body>
+        title: <input type="text" id="title" autofocus><br>
+        description:<br>
+        <textarea rows="10" cols="50" id="description"></textarea><br>
+        price: <input type="text" id="price"><br>
+        link: <input type="text" id="link"></input><br>
+        thumb link: <input type="text" id="thumb"><br>
+        big image link: <input type="text" id="big_image"><br>
+        <code>optional</code>
+        screenshots: <input type="text" id="screenshots">
+        <button id="submit">submit</button>
+    </body>
+</html>

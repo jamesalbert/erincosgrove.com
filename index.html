@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="James Albert">
+
+    <title>Erin Cosgrove</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.jpg"/>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - You will need to use your own API key to use the map feature -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+    <link href="js/jquery-ui-1.11.0.custom/jquery-ui.min.css" rel="stylesheet">
+    <!--<script language="javascript" type="text/javascript" src="jquery-1.8.2.js"></script>-->
+    <script src="js/jquery-ui-1.11.0.custom/jquery-ui.min.js"></script>
+    <script src="jssor/js/jssor.slider.min.js"></script>
+    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script language="javascript" type="text/javascript">
+      $(document).ready(function() {
+        var options = {
+            $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+            $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+            $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+            $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+            $ArrowKeyNavigation: true,                          //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+            $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+            $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+            //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+            //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+            $SlideSpacing: 0,                                   //[Optional] Space between each slide in pixels, default value is 0
+            $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+            $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+            $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+            $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+            $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+            },
+
+            $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,              //[Required] Class to create thumbnail navigator instance
+                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+
+                $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+                $AutoCenter: 3,                                 //[Optional] Auto center thumbnail items in the thumbnail navigator container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 3
+                $Lanes: 1,                                      //[Optional] Specify lanes to arrange thumbnails, default value is 1
+                $SpacingX: 3,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
+                $SpacingY: 3,                                   //[Optional] Vertical space between each thumbnail in pixel, default value is 0
+                $DisplayPieces: 9,                              //[Optional] Number of pieces to display, default value is 1
+                $ParkingPosition: 260,                          //[Optional] The offset position to park thumbnail
+                $Orientation: 1,                                //[Optional] Orientation to arrange thumbnails, 1 horizental, 2 vertical, default value is 1
+                $DisableDrag: false                            //[Optional] Disable drag or not, default value is false
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$('slideshow', options);
+
+        $(".fancybox").fancybox({
+            openEffect  : 'fade',
+            closeEffect : 'fade',
+            padding: 10,
+            iframe : {
+                preload: false
+            },
+            helpers: {
+                overlay: {
+                    locked: false,
+                    css : {
+                        'background' : 'rgba(0, 0, 0, 0.95)'
+                    }
+                }
+            }
+        });
+        //$('#project_list').load('http://jamesalbert.com/projects');
+        //$('#store_list').load('http://jamesalbert.com/products');
+        //$('#slides').load('http://jamesalbert.com/slides');
+        $('#cola').click(function() {
+            $('#essay').dialog({
+                width: 'auto'
+            })
+        });
+        $('#cvd').click(function(){
+          $("#dialog").dialog({
+            width: 'auto'
+          });
+        });
+        $('.nav li.dropdown').hover(function() {
+            $(this).addClass('open');
+        }, function() {
+            $(this).removeClass('open');
+        });
+        $('.page-scroll').click(function() {
+            $('.navbar-collapse').collapse('hide');
+        });
+      });
+    </script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Erin</span> Cosgrove
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#cvd">Curriculum Vitae</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#bio">bio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#accld">acclaims</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#projectsd">projects</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#stored">store</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Links<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a target="_blank" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&amp;s=books">Amazon</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.amazon.de/exec/obidos/ASIN/3936738149/qid%3D1106520165/%20%0Dsr%3D1-11/ref%3Dsr%5F1%5F11%5F11/028-3823155-3587722">German Amazon</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.carlberggallery.com/artists.php?artist=ecosgrove">Carl Berg Gallery</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.lalouver.com/roguewaveprojects/html/erin-cosgrove.html">Rogue Wave "LA Louver"</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.aptglobal.org/view/artist.asp?ID=500">Artist Pension Trust</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.artbabble.org/video/hammer/erin-cosgrove">ArtBabble</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://blog.sbma.net/2010/10/featured-artist-erin-cosgrove/">Santa Barbara Museum of Art Blog</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.artslant.com/ny/artists/show/25899-erin-cosgrove">ArtSlant</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Press<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a target="_blank" href="http://www.fluter.de/de/spiele/buecher/3942/">Fluter</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.villagevoice.com/news/0324,baker,44710,1.html">Village Voice</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://imoralist.blogspot.com/2009/02/erin-cosgrove-3r1n-56r0v3.html">Leap into the Void "What Manner?" review</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.lalouver.com/roguewaveprojects/html/erin-cosgrove.html">LA Times "What Manner?" review</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.carlberggallery.com/pdf/COSGROVE_artforum.com.pdf">ArtForum "What Manner?"  review</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://latimesblogs.latimes.com/culturemonster/2009/07/art-review-rogue-wave-09-at-la-louver-gallery.html">LA Times "Rogue Wave" review</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.villagevoice.com/2009-04-15/film/migrating-forms-at-anthology-film-archives/http">Village Voice "Migrating Forms" review</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a target="_blank" href="http://www.thelmagazine.com/newyork/migrating-forms-festival/Content?oid=1147151">The L Magazine "Migrating Forms" review</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="fancybox" data-fancybox-type="iframe" rel="cola" href="colaessay.pdf" title="R" id="cola" target="_blank">COLA Essay</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Erin's Gallery</h1>
+                        <p class="intro-text"><i>"A Los Angeles–based artist, animator, and author, Erin Cosgrove mixes pop culture and a range of historical references"</i></p>
+                        <div class="page-scroll">
+                            <a href="#contact" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <section id='contact' class="container content-section text-center">
+        <div class="row" id="contacts">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Erin's Contact Information</h2>
+                <p>Please send all inquiries to Angeles Gallery - <a target="_blank" href="mailto:info@anglesgallery.com">info@angelesgallery.com</a></p>
+                <br>
+                <br>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="content-section text-center">
+        <div class="download-section" id="cvd">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Erin's Curriculum Vitae</h2>
+                    <div class="fancybox" data-fancybox-type="iframe" rel="cv" href="http://www.erincosgrove.com/up/ErinCosgrove.pdf" title="Erin's CV">
+                        <a class="btn btn-circle" style="-ms-transform:rotate(270deg); -moz-transform:rotate(270deg); -webkit-transform:rotate(270deg); -o-transform:rotate(270deg);">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+    </section>
+
+    <section id="bios" class="container content-section text-center">
+        <div id="bio" class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Erin's Biography</h2>
+<style>
+p.bio_desc {
+    font-size: 14px
+}
+</style>
+                <div class="col-xs-16">
+                    <p class="bio_desc">
+                    Erin Cosgrove is an artist and writer who uses video, animation, books, painting, scrolls, timelines, installation, and performance in her artwork. Erin was born in St. Paul, Minnesota, and has lived in Los Angeles since 1998. She received her BFA from The University of Minnesota in 1996 and an MFA from UCLA in 2001.
+                    Since 2001 her work has been exhibited throughout the United States and Europe including one-person shows at The Hammer Museum, Los Angeles; Carl Berg Gallery, Los Angeles; Printed Matter, New York; and Espace Croise Centre d'art Contemporain, Roubaix, France. Her art is represented in the collections of The Museum of Contemporary Art, Los Angeles and The Hammer Museum, Los Angeles. Her work has been included in shows at The Brooklyn Museum of Art, New York; Galleri S.E International Contemporary Art, Bergen, Norway; Catharine Clark Gallery, San Francisco; Rogue Wave at LA Louver, Los Angeles; The Armory Show, New York; The Santa Barbara Museum of Art; Kunst-Werke, Berlin, Germany; The Landesmuseum Joanneum, Graz, Austria; and Arco, Madrid.
+                    Ms. Cosgrove is also a published author. Her art novel, The Baader-Meinhof Affair, was published by Printed Matter, NY, in 2003 and was translated for a German edition by blumenbar Verlag, Munich, in 2005. Her videos have been screened at The Museum of Modern Art, New York; Videoformes, Auvergne, France; Pulse 2010, Miami; Migrating Forms Film Festival, New York; Christine Koenig Gallery, Vienna, Austria; The Pleasure Dome, Toronto; The Wexner Center for the Arts, Ohio; The Blanton Museum, Austin, Texas; The Impakt Festival, Utrecht, Netherlands; VPRO (Netherlands TV), and other venues as well.
+                    She has received grants and fellowships from The John Simon Guggenheim Foundation, The Creative Capital Foundation, The City of Los Angeles Department Of Cultural Affairs, The Contemporary Collectors of Orange County, The Center for Cultural Innovation, The Durfee Foundation, The Jerome Foundation, and other sources.
+                    </p>
+                </div>
+                <div class="col-xs-12">
+                    <p class="bio_desc">
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+p.accl_desc {
+    font-size: 14px
+}
+</style>
+
+    <section id="accl" class="container content-section text-center">
+         <div id="accld" class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Erin's Acclamations</h2>
+                <p class="accl_desc">
+                <b>Humankind just tends to tickle Erin Cosgrove</b>
+                <br>
+                    The artist finds meaning … and humor … in romance, religion and other preoccupations. By Holly Myers, Special to the Los Angeles Times, Dec 26, 2010
+                    In the early years of her career, in the mid- to late 1990s, Erin Cosgrove made mixed-media conceptual works with a droll feminist bent. She produced a mock-informational video for women on how to dress so as to not provoke men, for instance, and devised a "Do-It-Yourself Beauty Make-Over and At-Home Plastic Surgery Kit," complete with a paint scraper and instructional photos.
+                    <a target="_blank" href="http://www.latimes.com/entertainment/news/la-ca-cosgrove-20101226,0,7909275.story">read full article</a>
+                </p>
+                <br>
+                <p class="accl_desc">
+                <h4>Essay for the Hammer Museum "What Manner of Person Art Thou?"</h4>
+                <br>
+                    Blood and Irony By <a target="_blank" href="http://en.wikipedia.org/wiki/Julian_Gough">Julian Gough</a>:
+                    I yearn for sex, and food, and status, yet when I get all these things, I want more. There must be some greater thing that would satisfy all yearning forever... People have come up with many ideas to satisfy this human ache. Most have been called religions and involve stories designed to make you feel better (you are not a serf, you are the beloved son of God).
+                    <a target="_blank" href="http://hammer.ucla.edu/exhibitions/detail/exhibition_id/146">read full article</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="content-section text-center">
+        <div class="download-section" id="projectsd">
+            <div class="container">
+                <div id='project_list' class="col-lg-8 col-lg-offset-2">
+                    <h2>Erin's Projects</h2>
+                        <div id="slideshow" style="position: relative; top: 0px; left: 50px; width: 600px; height: 300px;">
+                            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                                <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                                    background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+                                </div>
+                                <div style="position: absolute; display: block; background: url(jssor/img/loading.gif) no-repeat center center;
+                                    top: 0px; left: 0px;width: 100%;height:100%;">
+                                </div>
+                            </div>
+                            <!-- Slides Container -->
+                            <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
+                                <div><img u='image' src='img/cos26.jpg' /></div>
+                                <div><img u='image' src='img/cos20.jpg' /></div>
+                                <div><img u='image' src='img/cos22.jpg' /></div>
+                                <div><img u='image' src='img/cos21.jpg' /></div>
+                                <div><img u='image' src='img/cos27.jpg' /></div>
+                                <div><img u='image' src='img/cos25.jpg' /></div>
+                                <div><img u='image' src='img/cos24.jpg' /></div>
+                                <div><img u='image' src='img/cos23.jpg' /></div>
+                                <div><img u='image' src='img/cos18.jpg' /></div>
+                                <div><img u='image' src='img/hai_s4.jpg' /></div>
+                                <div><img u="image" src="img/cos2.jpg" /></div>
+                            </div>
+                            <style>
+                                /* jssor slider arrow navigator skin 02 css */
+                                /*
+                                .jssora02l              (normal)
+                                .jssora02r              (normal)
+                                .jssora02l:hover        (normal mouseover)
+                                .jssora02r:hover        (normal mouseover)
+                                .jssora02ldn            (mousedown)
+                                .jssora02rdn            (mousedown)
+                                */
+                                .jssora02l, .jssora02r, .jssora02ldn, .jssora02rdn
+                                {
+                                    position: absolute;
+                                    cursor: pointer;
+                                    display: block;
+                                    background: url(jssor/img/a02.png) no-repeat;
+                                    overflow:hidden;
+                                }
+                                .jssora02l { background-position: -3px -33px; }
+                                .jssora02r { background-position: -63px -33px; }
+                                .jssora02l:hover { background-position: -123px -33px; }
+                                .jssora02r:hover { background-position: -183px -33px; }
+                                .jssora02ldn { background-position: -243px -33px; }
+                                .jssora02rdn { background-position: -303px -33px; }
+                            </style>
+                            <!-- Arrow Left -->
+                            <span u="arrowleft" class="jssora02l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+                            </span>
+                            <!-- Arrow Right -->
+                            <span u="arrowright" class="jssora02r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+                            </span>
+                            <!-- Arrow Navigator Skin End -->
+                            
+                            <!-- ThumbnailNavigator Skin Begin -->
+                            <div u="thumbnavigator" class="jssort03" style="position: absolute; width: 600px; height: 60px; left:0px; bottom: 0px;">
+                                <div style=" background-color: #000; filter:alpha(opacity=30); opacity:.3; width: 100%; height:100%;"></div>
+
+                                <!-- Thumbnail Item Skin Begin -->
+                                <style>
+                                    /* jssor slider thumbnail navigator skin 03 css */
+                                    /*
+                                    .jssort03 .p            (normal)
+                                    .jssort03 .p:hover      (normal mouseover)
+                                    .jssort03 .pav          (active)
+                                    .jssort03 .pav:hover    (active mouseover)
+                                    .jssort03 .pdn          (mousedown)
+                                    */
+                                    .jssort03 .w, .jssort03 .pav:hover .w
+                                    {
+                                        position: absolute;
+                                        width: 60px;
+                                        height: 30px;
+                                        border: white 1px dashed;
+                                    }
+                                    * html .jssort03 .w
+                                    {
+                                        width /**/: 62px;
+                                        height /**/: 32px;
+                                    }
+                                    .jssort03 .pdn .w, .jssort03 .pav .w { border-style: solid; }
+                                    .jssort03 .c
+                                    {
+                                        width: 62px;
+                                        height: 32px;
+                                        filter:  alpha(opacity=45);
+                                        opacity: .45;
+                                        
+                                        transition: opacity .6s;
+                                        -moz-transition: opacity .6s;
+                                        -webkit-transition: opacity .6s;
+                                        -o-transition: opacity .6s;
+                                    }
+                                    .jssort03 .p:hover .c, .jssort03 .pav .c
+                                    {
+                                        filter:  alpha(opacity=0);
+                                        opacity: 0;
+                                    }
+                                    .jssort03 .p:hover .c
+                                    {
+                                        transition: none;
+                                        -moz-transition: none;
+                                        -webkit-transition: none;
+                                        -o-transition: none;
+                                    }
+                                </style>
+                                <div u="slides" style="cursor: move;">
+                                    <div u="prototype" class="p" style="POSITION: absolute; WIDTH: 62px; HEIGHT: 32px; TOP: 0; LEFT: 0;">
+                                        <div class=w><ThumbnailTemplate style=" WIDTH: 100%; HEIGHT: 100%; border: none;position:absolute; TOP: 0; LEFT: 0;"></ThumbnailTemplate></div>
+                                        <div class=c style="POSITION: absolute; BACKGROUND-COLOR: #000; TOP: 0; LEFT: 0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Thumbnail Item Skin End -->
+                            </div>
+                            <!-- ThumbnailNavigator Skin End -->
+                        </div>
+                        <small>Erin's Glorious Slideshow</small>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" data-fancybox-type="iframe" rel="What Manner of Person Art Thou?" href="img/fbifsbbh.mp4" title="What Manner of Person Art Thou?">
+                                    <img src=http://www.erincosgrove.com/Yoder-Troyer-monks-burning.jpg></img>
+                                </a>
+                                <a class="fancybox" data-fancybox-type="iframe" rel="What Manner of Person Art Thou?" href="whatishertson.pdf" title="Hertson"></a>
+                                <a class="fancybox" data-fancybox-type="iframe" rel="What Manner of Person Art Thou?" href="img/fromQT.mp4" title="Hertson Documentary"></a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" href="http://whatmannerofpersonartthou.com/">What Manner of Person Art Thou?</a><br>
+                                <small>&#34;What Manner of Person Art Thou?&#34; is a 65 minute animated video that relates the twisted tale of Elijah Yoder and Enoch Troyer; two anachronistic believers who dispense violent justice on those they deem to be evildoers. Within this black comedy structure, Yoder and Troyer are allegorical figures that represent the corruptibility of faith. 2004-2008</small>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" data-fancybox-type="iframe" rel="Happy Am I" href="img/happy_am_i.mp4" title="Happy Am I">
+                                    <img src=http://www.erincosgrove.com/happy_main.jpg></img>
+                                </a>
+                                <a class="fancybox" rel="Happy Am I" href="http://www.erincosgrove.com/Happy-AM-I-video-still-2.jpg" title="Happy Am I"></a>
+                                <a class="fancybox" rel="Happy Am I" href="http://www.erincosgrove.com/waq-waq-treeflat1.jpg" title="Waq-Waq Tree"></a>
+                                <a class="fancybox" rel="Happy Am I" href="http://www.erincosgrove.com/Happy-Am-I-Venus-Epoch.jpg" title="Happy Am I: Venus Epoch"></a>
+                                <a class="fancybox" rel="Happy Am I" href="http://www.erincosgrove.com/Happy-Am-I-Sutton-Hoo-Epoch.jpg" title="Happy Am I: Sutton Hoo Epoch"></a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" href="http://www.lalouver.com/roguewaveprojects/html/erin-cosgrove.html">Happy Am I</a><br>
+                                <small>Happy Am I, condenses human evolution – physical, historical, and cultural— into a 2 minute 35 second animated video. The historical characters sing and dance through a timeline of human existence. Their dance is choreographed to a 1930’s liturgical song that merrily anticipates the end of the world. The video is accompanied by a series of drawings of the animated dancers, and includes the mythical Waq-Waq tree, or tree that bears human fruit.</small>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" rel="7 Romance Novels" href="http://www.erincosgrove.com/book-spread-flat.jpg" title="7 Romance Novels">
+                                    <img src=http://www.erincosgrove.com/book-spread-flat.jpg></img>
+                                </a>
+                                <a class="fancybox" rel="7 Romance Novels" href="http://erincosgrove.com/regansroom.swf" title="Regan's Room"></a>
+                                <a class="fancybox" rel="7 Romance Novels" href="http://erincosgrove.com/Images/Timeline.gif" title="Timeline"></a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">7 Romance Novels</a><br>
+                                <small>Seven Romance Novels are seven actual romance novels from the point of view of seven different authors, all of whom are named Erin Cosgrove. The theme of each novel subverts the romance genre&#39;s formula, carrying its logic to unromantic extremes. The satiric novel, &#34;The Baader-Meinhof Affair&#34;, 2003, Printed Matter Inc., takes on the romance genre&#39;s trope of romanticizing the outlaw. It depicts the unlikely amour between a student studying serial killers and a Baader-Meinhof aficionado. &#34;The Baader-Meinhof Affair&#34; has a hard cover German language translation, &#34;Die Baader-Meinhof-Affäre&#34;, Blumenbar Publishing Munich, Germany 2005. Her live action and video, &#34;A Heart Lies Beneath,&#34; (based on &#34;The Baader-Meinhof Affair&#34; and her artwork), was chosen to be produced for the Sundance Channel&#39;s TVlab in 2003.
+
+                        2001-?</small>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" data-fancybox-type="iframe" rel="A Heart Lies Beneath" href="img/aheart.mp4" title="A Heart Lies Beneath">
+                                    <img src=http://www.erincosgrove.com/Cosgrove-Video-bank-robbery.jpg></img>
+                                </a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" href="http://blogs.saic.edu/cate/interview-with-erin-cosgrove/">A Heart Lies Beneath</a><br>
+                                <small>&#34;A Heart Lies Beneath&#34; is satire based on The Baader-Meinhof Affair. In The Baader-Meinhof Affair society&#39;s romance with the outlaw is revealed in a story about love between modern-day American aficionados of the Baader-Meinhof Gang (a 1970s German terrorist group comprising mainly of middleclass students). Romanticizing the outlaw is a long-standing trope of romance and Hollywood, but here is taken to unromantic extremes.
+
+                        The 7-minute live footage (with Fabio) and animated pilot was written, directed, and drawn by Erin Cosgrove initially produced for the Sundance Channel&#39;s TVLab. The visual style for the animation is partly based on 1950&#39;s romance comic books.
+
+                        2004, live action and animated video, (7 minutes)</small>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" data-fancybox-type="iframe" rel="One Must Know the Animals!" href="img/onemust.mp4" title="One Must Know the Animals!">
+                                    <img src=http://www.erincosgrove.com/leapy.jpg></img>
+                                </a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" onclick="alert('no link');">One Must Know the Animals!</a><br>
+                                <small>A fictional account of the apocalypse&#39;s Christ/Anti-Christ dualism as projected onto two house cats.
+
+                        2003 (7 minutes 52 seconds)</small>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" data-fancybox-type="iframe" rel="Human Alarm" href="img/humanalarm.mp4" title="Human Alarm">
+                                    <img src=http://www.erincosgrove.com/human-alarm.jpg></img>
+                                </a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" onclick="alert('no link');">Human Alarm</a><br>
+                                <small>For this video I took voice lessons to sound as much like a six-sound car alarm as humanly possible. By the end of my lessons, I was louder than actual car alarms.
+
+                        1999 (1 minute 10 seconds)</small>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="fancybox" data-fancybox-type="iframe" rel="Centerfold" href="img/centerfold.mp4" title="Centerfold">
+                                    <img src=http://www.erincosgrove.com/centerfold.jpg></img>
+                                </a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a target="_target" onclick="alert('no link');">Centerfold</a><br>
+                                <small>Depiction of a &#34;centerfold&#34; with music by Alessandro Moreschi, the last castrato (and only castrato to be recorded), as accompaniment. 1996 (2 minutes 40 seconds)</small>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="store" class="container content-section text-center">
+        <div class="row" id="stored">
+        <br>
+        <br>
+        <br>
+        <br>
+            <div id="store_list" class="col-lg-8 col-lg-offset-2">
+                <h2>Erin's Store</h2>
+                <li class="divider"></li>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="HMDBF" href="http://erincosgrove.com/ASR/images/HMDBFbig.jpg" title="The Hand-Me-Down Boyfriend">
+                            <img src="http://erincosgrove.com/ASR/images/HMDBFt.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">The Hand-Me-Down Boyfriend</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="bma" href="http://erincosgrove.com/ASR/images/bmaBIG.jpg" title="The Baader-Meinhof Affair">
+                            <img src="http://erincosgrove.com/ASR/images/bmaT.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">The Baader-Meinhof Affair</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="FPL" href="http://erincosgrove.com/ASR/images/FPLbig.jpg" title="False Puppy Love">
+                            <img src="http://erincosgrove.com/ASR/images/FPLt.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">False Puppy Love</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="MRS" href="http://erincosgrove.com/ASR/images/KatesMRSbig.jpg" title="Kate's M.R.S. Degree">
+                            <img src="http://erincosgrove.com/ASR/images/KatesMRSt.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">Kate's M.R.S. Degree</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="LOS" href="http://erincosgrove.com/ASR/images/LOS.jpg" title="Love's Other Shoe">
+                            <img src="http://erincosgrove.com/ASR/images/LOSt.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">Love's Other Shoe</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="Sycophant" href="http://erincosgrove.com/ASR/images/Sycophant.jpg" title="Sycophant Love">
+                            <img src="http://erincosgrove.com/ASR/images/SycophantT.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">Sycophant Love</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="fancybox" rel="TTTS" href="http://erincosgrove.com/ASR/images/TTTS.jpg" title="The Two-Timing Two-Stepper">
+                            <img src="http://erincosgrove.com/ASR/images/TTTSt.jpg"></img>
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a target="_target" href="http://www.amazon.com/exec/obidos/tg/detail/-/0894390104/%20qid=1107914976/sr=1-1/ref=sr_1_1/002-2870068-8276833?v=glance&s=books">The Two-Timing Two-Stepper</a>
+                        <p>by Erin Cosgrove</p>
+                        <p>List Price: $14.95</p>
+                    </div>
+                </div>
+                       <li class="divider"></li>
+                <br>
+            </div>
+        </div>
+    <small>Copyright © 2014 Erin Cosgrove</small>
+    </section>
+
+</body>
+
+</html>

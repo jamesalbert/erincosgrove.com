@@ -1,0 +1,13 @@
+curl -X POST --user 2UXM8ESTB1MVPEO8DOBFDVMBE:5y3HEwaGZP9kuB2rDyhpLyM1hYuJ+s1r7XpXgnOyoGs \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "givenName": "This Is Totes",
+        "surname": "Mr",
+        "email": "tk421@gmail.com",
+        "password":"Changeme1",
+        "customData":{
+          "faction":"empire"
+        }
+      }' \
+"https://api.stormpath.com/v1/applications/5xAMWqSO846hgmIEbJVbDJ/accounts"

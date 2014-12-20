@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#submit').click(function() {
+                var payload = {
+                    title: $('#title').val(),
+                    description: $('#description').val(),
+                    thumb: $('#thumb').val(),
+                    link: $('#link').val(),
+                    screenshots: $('#screenshots').val(),
+                    video_link: $('#video_link').val(),
+                    big_image: $('#big_image').val()
+                }
+                $.post('http://jamesalbert.com/project', data=payload, function(res) {
+                    alert('Project Posted');
+                    window.location.reload();
+                });
+            })
+        })
+        </script>
+    </head>
+    <body>
+        title: <input type="text" id="title" autofocus><br>
+        description:<br>
+        <textarea rows="10" cols="50" id="description"></textarea><br>
+        link: <input type="text" id="link"></input><br>
+        thumb link: <input type="text" id="thumb"><br>
+        big image link: <input type="text" id="big_image"><br>
+        <code>optional</code>
+        video link: <input type="text" id="video_link"><br>
+        <code>optional</code>
+        screenshots: <input type="text" id="screenshots">
+        <button id="submit">submit</button>
+    </body>
+</html>

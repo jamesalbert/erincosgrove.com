@@ -1,0 +1,24 @@
+<h2>Erin's Projects</h2>
+{% set projects = body['projects'] -%}
+{% for project in projects -%}
+<li class="divider"></li>
+<div class="row">
+    <div class="col-xs-6">
+        <a class="fancybox" rel="{{ project['title'] }}" href="img/{{ project['big_image'] }}" title="{{ project['title'] }}">
+            <img src="img/{{ project['thumb'] }}"></img>
+        </a>
+        {% if project['screenshots'] -%}
+            {% set screenshots = project['screenshots']|separate_links -%}
+            {% for scr in screenshots -%}
+                <a class="fancybox" rel="{{ project['title'] }}" href="img/{{ scr }}"></a>
+            {% endfor %}
+        {%- endif %}
+    </div>
+    <div class="col-xs-6">
+        <a target="_target" href="{{ project['link'] }}">{{ project['title'] }}</a>
+        <small>{{ project['description'] }}</small>
+    </div>
+</div>
+<br>
+{%- endfor %}
+<li class="divider"></li>
